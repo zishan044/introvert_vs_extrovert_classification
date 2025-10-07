@@ -1,0 +1,30 @@
+[build-system]
+requires = [ "setuptools",]
+build-backend = "setuptools.build_meta"
+
+[project]
+requires-python = ">=3.9"
+name = "introverts_vs_extroverts"
+readme = "README.md"
+dynamic = [ "version",]
+dependencies = [ "ipython>=8.10", "jupyterlab>=3.0", "notebook", "kedro~=1.0.0",]
+
+[project.scripts]
+introverts-vs-extroverts = "introverts_vs_extroverts.__main__:main"
+
+[tool.kedro]
+package_name = "introverts_vs_extroverts"
+project_name = "introverts_vs_extroverts"
+kedro_init_version = "1.0.0"
+tools = "['None']"
+example_pipeline = "False"
+source_dir = "src"
+
+[project.entry-points."kedro.hooks"]
+
+[tool.setuptools.dynamic.version]
+attr = "introverts_vs_extroverts.__version__"
+
+[tool.setuptools.packages.find]
+where = [ "src",]
+namespaces = false
