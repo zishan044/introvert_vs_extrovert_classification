@@ -28,3 +28,6 @@ attr = "introverts_vs_extroverts.__version__"
 [tool.setuptools.packages.find]
 where = [ "src",]
 namespaces = false
+
+[tool.kedro_telemetry]
+project_id = "6eec0a5b13504675921faeb2c6c658e1"
